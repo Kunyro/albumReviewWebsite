@@ -1,0 +1,87 @@
+/* CSS reset */
+* {
+    box-sizing: border-box;
+}
+html, body, div, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: "Noto Serif", serif;
+    vertical-align: baseline;
+    /* Removes weird spacing between vertical divs */
+    line-height: 0;
+}
+/* Flexbox to create the main album gallery */
+.albumGalleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* This is to prevent white space on right of the screen when hovering album on the right */
+    overflow: hidden;
+}
+/* This is a div containing the album cover and text */
+.albumContainer {
+    /* Since writting 33.33% is kinda ugly */
+    width: calc(100% / 3);
+    position: relative;
+    transition: transform 0.3s;
+}
+/* Enlargen effect when hovering on a specific album */
+.albumContainer:hover {
+    z-index: 2;
+    transform: scale(1.1);
+}
+/* This is the actual img of the album cover width is 100 so that it occupies the full div */
+.albumCoverItem {
+    width: 100%;
+    transition: filter 0.3s;
+}
+/* Blur effect on the album cover when hovering over it */
+.albumCoverItem:hover {
+    filter: blur(8px);
+}
+/* Text that is invisible by default but revealed when hovering */
+.albumTitleItem {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s;
+    font-size: 2.5rem;
+    /* This is to let the text wrap */
+    width: max-content;
+}
+.albumArtistItem {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s;
+    font-size: 1.5rem;
+    /* This is to let the text wrap */
+    width: max-content;
+}
+/* Reveal text when hovering */
+.albumContainer:hover .albumTitleItem, .albumContainer:hover .albumArtistItem {
+    visibility: visible;
+    opacity: 1;
+}
+/* Keeps the cover blurred even when hovering text */
+.albumContainer:hover .albumCoverItem {
+    filter: blur(8px);
+}
+/* Text collors for different albums */
+.madvillainy {
+    color: #ed7739;
+}
+.tpab {
+    color: #0b0b0b;
+}
+.endtroducing {
+    color: #d6d3d9;
+}

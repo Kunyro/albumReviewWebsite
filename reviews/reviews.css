@@ -1,0 +1,139 @@
+/* CSS reset */
+* {
+    box-sizing: border-box;
+}
+html, body, div, img {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1em;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: "Noto Serif", serif;
+    vertical-align: baseline;
+}
+/* Display grid to arrange all the info at the top before the actual review */
+/* To be fair display grid isnt necessary here but I just wanted to try it out */
+.gridContainer {
+    display: grid;
+    grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+}
+/* Make the album cover take up the whole square */
+.coverItem {
+    width: 100%;
+}
+/* Make the information text centered */
+.infoContainer {
+    place-self: center;
+    text-align: center;
+}
+/* Font sizes so it looks pretty */
+.titleItem {
+    font-size: 4vw;
+}
+.artistItem {
+    font-size: 2vw;
+}
+.releaseItem {
+    font-size: 1vw;
+}
+.genreItem {
+    font-size: 1.3vw;
+}
+.labelItem {
+    font-size: 1.3vw;
+}
+.dateItem {
+    font-size: 1.3vw;
+}
+/* Unnecessary but it makes the score strethced out and take up the entire 33% of the page, looks cool */
+.scoreItem {
+    padding: 0;
+    margin: 0; 
+    border: 0;
+    display: inline-block;
+    transform-origin: center;
+}
+/* Position the review so that it takes up 2 squares on the grid and style it a bit */
+.reviewContainer {
+    grid-area: 2 / 1 / 2 / 3;
+    margin: 2em 10% 1em 10%;
+    padding: 3em;
+    text-align:left;
+    font-size: 150%;
+}
+
+/* Positioning of extra images on bottom left */
+.extraItem1 {
+    z-index: 2;
+    grid-row: 2;
+    grid-column: 3;
+    width: 60%;
+    justify-self: right;
+    margin-top: 70%;
+    margin-right: 5%;
+}
+.extraItem2 {
+    z-index: 1;
+    grid-row: 2;
+    grid-column: 3;
+    width: 80%;
+    margin-top: 15%; 
+}
+.extraItem3 {
+    z-index: 1;
+    grid-row: 2;
+    grid-column: 3;
+    width: 90%;
+    margin-top: 120%;
+}
+/* Positioning of made by Johakim Fontaine Barboza text */
+footer {
+    text-align: center;
+}
+/* Individual styling for each album */
+.madvillainy {
+    background-color: #e6e6e6;
+}
+.madvillainy .scoreItem {
+    line-height: 108%;
+    font-size: 29.5vw;
+    transform: scaleY(1.4);
+}
+.madvillainy .reviewContainer {
+    background-color: #d1d1d1;
+}
+.madvillainy .reviewItem {
+    background-color: #d1d1d1;
+}
+.tpab {
+    background-color: #c4c2c3;
+}
+.tpab .scoreItem {
+    line-height: 145%;
+    font-size: 23vw;
+    transform: scaleY(1.8);
+}
+.tpab .reviewContainer {
+    background-color: #eeeeee;
+}
+.tpab .reviewItem {
+    background-color: #eeeeee;
+}
+.endtroducing {
+    background-color: #969180;
+}
+.endtroducing .scoreItem {
+    line-height: 80%;
+    font-size: 39vw;
+    transform-origin: left;
+    transform: scaleX(1.5);
+    /* This is to remove weird space on the right for this score specifically */
+    margin-right: 100%; 
+}
+.endtroducing .reviewContainer {
+    background-color: #d6d3d9;
+}
+.endtroducing .reviewItem {
+    background-color: #d6d3d9;
+}

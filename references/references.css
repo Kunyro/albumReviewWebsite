@@ -1,0 +1,56 @@
+/* CSS reset */
+* {
+    box-sizing: border-box;
+}
+html, body, div, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: "Noto Serif", serif;
+    /* Removes weird spacing between vertical divs */
+    line-height: 0;
+}
+/* Flexbox to create the main album gallery */
+.albumGalleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* This is a div containing the album cover and text */
+.albumContainer {
+    /* Since writting 33.33% is kinda ugly */
+    z-index: -1;
+    width: calc(100% / 3);
+    position: relative;
+    overflow: hidden;
+}
+/* This is the actual img of the album cover width is 100 so that it occupies the full div */
+.albumCoverItem {
+    z-index: -1;
+    width: 100%;
+    filter: brightness(20%) blur(10px);
+    transform: scale(1.1);
+}
+/* This is to place the text on top of the background */
+.referencesContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: normal;
+}
+/* Style the text */
+.referencesContainer h1 {
+    font-size: 400%;
+    color: white;
+}
+.referencesContainer a {
+    font-size: 200%;
+    color: white;
+}
+.referencesContainer p {
+    font-size: 200%;
+    color: white;
+}
